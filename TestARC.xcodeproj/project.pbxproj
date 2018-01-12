@@ -74,10 +74,7 @@
 		7EA7FDEA1FFFBF96001D48B6 /* TestARC */ = {
 			isa = PBXGroup;
 			children = (
-				7EA7FE011FFFBFCE001D48B6 /* TestARCProperties.h */,
-				7EA7FE021FFFBFCE001D48B6 /* TestARCProperties.m */,
-				7EA7FDFF1FFFBFCE001D48B6 /* TestObject.h */,
-				7EA7FE001FFFBFCE001D48B6 /* TestObject.m */,
+				7ECA6C3A2008ED1700A2F93D /* TestClasses */,
 				7EA7FDEB1FFFBF96001D48B6 /* AppDelegate.h */,
 				7EA7FDEC1FFFBF96001D48B6 /* AppDelegate.m */,
 				7EA7FDEE1FFFBF96001D48B6 /* ViewController.h */,
@@ -87,6 +84,13 @@
 				7EA7FDF61FFFBF96001D48B6 /* Info.plist */,
 				7EA7FDF71FFFBF96001D48B6 /* main.m */,
 				7EA7FDF91FFFBF96001D48B6 /* TestARC.entitlements */,
+			);
+			path = TestARC;
+			sourceTree = "<group>";
+		};
+		7ECA6C3A2008ED1700A2F93D /* TestClasses */ = {
+			isa = PBXGroup;
+			children = (
 				7EA7FE051FFFCB15001D48B6 /* TestMRCProperties.h */,
 				7EA7FE061FFFCB15001D48B6 /* TestMRCProperties.m */,
 				7EA7FE092004FB25001D48B6 /* TestMethodSwizzling.m */,
@@ -94,8 +98,12 @@
 				7EA7FE0C20050BA0001D48B6 /* TestAutoreleasePool.m */,
 				7EA7FE0E20050DD1001D48B6 /* MAutoreleasePool.h */,
 				7EA7FE0F20050DD1001D48B6 /* MAutoreleasePool.m */,
+				7EA7FE011FFFBFCE001D48B6 /* TestARCProperties.h */,
+				7EA7FE021FFFBFCE001D48B6 /* TestARCProperties.m */,
+				7EA7FDFF1FFFBFCE001D48B6 /* TestObject.h */,
+				7EA7FE001FFFBFCE001D48B6 /* TestObject.m */,
 			);
-			path = TestARC;
+			path = TestClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
