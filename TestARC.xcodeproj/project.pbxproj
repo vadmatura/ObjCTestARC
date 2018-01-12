@@ -12,6 +12,12 @@
 		7EA7FDF21FFFBF96001D48B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EA7FDF11FFFBF96001D48B6 /* Assets.xcassets */; };
 		7EA7FDF51FFFBF96001D48B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EA7FDF31FFFBF96001D48B6 /* Main.storyboard */; };
 		7EA7FDF81FFFBF96001D48B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA7FDF71FFFBF96001D48B6 /* main.m */; };
+		7EA7FE031FFFBFCF001D48B6 /* TestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA7FE001FFFBFCE001D48B6 /* TestObject.m */; };
+		7EA7FE041FFFBFCF001D48B6 /* TestARCProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA7FE021FFFBFCE001D48B6 /* TestARCProperties.m */; };
+		7EA7FE071FFFCB15001D48B6 /* TestMRCProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA7FE061FFFCB15001D48B6 /* TestMRCProperties.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7EA7FE0A2004FB25001D48B6 /* TestMethodSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA7FE092004FB25001D48B6 /* TestMethodSwizzling.m */; };
+		7EA7FE0D20050BA0001D48B6 /* TestAutoreleasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA7FE0C20050BA0001D48B6 /* TestAutoreleasePool.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7EA7FE1020050DD1001D48B6 /* MAutoreleasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA7FE0F20050DD1001D48B6 /* MAutoreleasePool.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +31,17 @@
 		7EA7FDF61FFFBF96001D48B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7EA7FDF71FFFBF96001D48B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7EA7FDF91FFFBF96001D48B6 /* TestARC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestARC.entitlements; sourceTree = "<group>"; };
+		7EA7FDFF1FFFBFCE001D48B6 /* TestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestObject.h; sourceTree = "<group>"; };
+		7EA7FE001FFFBFCE001D48B6 /* TestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestObject.m; sourceTree = "<group>"; };
+		7EA7FE011FFFBFCE001D48B6 /* TestARCProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestARCProperties.h; sourceTree = "<group>"; };
+		7EA7FE021FFFBFCE001D48B6 /* TestARCProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestARCProperties.m; sourceTree = "<group>"; };
+		7EA7FE051FFFCB15001D48B6 /* TestMRCProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestMRCProperties.h; sourceTree = "<group>"; };
+		7EA7FE061FFFCB15001D48B6 /* TestMRCProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestMRCProperties.m; sourceTree = "<group>"; };
+		7EA7FE092004FB25001D48B6 /* TestMethodSwizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestMethodSwizzling.m; sourceTree = "<group>"; };
+		7EA7FE0B20050BA0001D48B6 /* TestAutoreleasePool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestAutoreleasePool.h; sourceTree = "<group>"; };
+		7EA7FE0C20050BA0001D48B6 /* TestAutoreleasePool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestAutoreleasePool.m; sourceTree = "<group>"; };
+		7EA7FE0E20050DD1001D48B6 /* MAutoreleasePool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAutoreleasePool.h; sourceTree = "<group>"; };
+		7EA7FE0F20050DD1001D48B6 /* MAutoreleasePool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAutoreleasePool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +74,10 @@
 		7EA7FDEA1FFFBF96001D48B6 /* TestARC */ = {
 			isa = PBXGroup;
 			children = (
+				7EA7FE011FFFBFCE001D48B6 /* TestARCProperties.h */,
+				7EA7FE021FFFBFCE001D48B6 /* TestARCProperties.m */,
+				7EA7FDFF1FFFBFCE001D48B6 /* TestObject.h */,
+				7EA7FE001FFFBFCE001D48B6 /* TestObject.m */,
 				7EA7FDEB1FFFBF96001D48B6 /* AppDelegate.h */,
 				7EA7FDEC1FFFBF96001D48B6 /* AppDelegate.m */,
 				7EA7FDEE1FFFBF96001D48B6 /* ViewController.h */,
@@ -66,6 +87,13 @@
 				7EA7FDF61FFFBF96001D48B6 /* Info.plist */,
 				7EA7FDF71FFFBF96001D48B6 /* main.m */,
 				7EA7FDF91FFFBF96001D48B6 /* TestARC.entitlements */,
+				7EA7FE051FFFCB15001D48B6 /* TestMRCProperties.h */,
+				7EA7FE061FFFCB15001D48B6 /* TestMRCProperties.m */,
+				7EA7FE092004FB25001D48B6 /* TestMethodSwizzling.m */,
+				7EA7FE0B20050BA0001D48B6 /* TestAutoreleasePool.h */,
+				7EA7FE0C20050BA0001D48B6 /* TestAutoreleasePool.m */,
+				7EA7FE0E20050DD1001D48B6 /* MAutoreleasePool.h */,
+				7EA7FE0F20050DD1001D48B6 /* MAutoreleasePool.m */,
 			);
 			path = TestARC;
 			sourceTree = "<group>";
@@ -141,7 +169,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EA7FDF01FFFBF96001D48B6 /* ViewController.m in Sources */,
+				7EA7FE1020050DD1001D48B6 /* MAutoreleasePool.m in Sources */,
 				7EA7FDF81FFFBF96001D48B6 /* main.m in Sources */,
+				7EA7FE031FFFBFCF001D48B6 /* TestObject.m in Sources */,
+				7EA7FE071FFFCB15001D48B6 /* TestMRCProperties.m in Sources */,
+				7EA7FE0D20050BA0001D48B6 /* TestAutoreleasePool.m in Sources */,
+				7EA7FE0A2004FB25001D48B6 /* TestMethodSwizzling.m in Sources */,
+				7EA7FE041FFFBFCF001D48B6 /* TestARCProperties.m in Sources */,
 				7EA7FDED1FFFBF96001D48B6 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +301,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_ENTITLEMENTS = TestARC/TestARC.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -282,6 +317,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_ENTITLEMENTS = TestARC/TestARC.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
