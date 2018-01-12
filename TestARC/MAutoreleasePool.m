@@ -32,6 +32,7 @@
 }
 
 - (void)drain {
+	[self printStatus];
 	for (id object in objects) {
 		[object release];
 	}

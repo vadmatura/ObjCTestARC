@@ -44,4 +44,13 @@ static int testObjectCount = 0;
 - (void)testMethod {
 	NSLog(@"testMethod: %@ %d", self.name, testObjectCount);
 }
+
+- (void)emptyMethod {
+	//do nothing
+}
+
+-(NSString *)description {
+	return _name;
+}
+
 @end

@@ -8,6 +8,7 @@
 
 #import "TestAutoreleasePool.h"
 #import "MAutoreleasePool.h"
+#import "TestObject.h"
 
 @implementation TestAutoreleasePool
 
@@ -17,9 +18,14 @@
 		MAutoreleasePool *pool = [MAutoreleasePool new];
 		
 		for (int i = 0; i < 10; i++) {
-			NSString *forString = [[NSString alloc] initWithFormat:@"TestPool%d", i];
-			[pool add:forString];
-			[pool printStatus];
+			TestObject *to1 = [[TestObject alloc] initWithName:[[NSString alloc] initWithFormat:@"TestPool1_%d", i]];
+			TestObject *to2 = [[TestObject alloc] initWithName:[[NSString alloc] initWithFormat:@"TestPool2_%d", i]];
+			[pool add:to1];
+			[pool add:to2];
+			
+			[to1 emptyMethod];
+			[to2 emptyMethod];
+			
 			[pool drain];
 		}
 		[pool release];

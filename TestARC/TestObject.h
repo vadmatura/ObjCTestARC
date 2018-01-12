@@ -14,4 +14,5 @@
 - (instancetype)initWithName:(NSString *) name;
 - (id)copyWithZone:(NSZone *) zone;
 - (void)testMethod;
+- (void)emptyMethod;
 @end
