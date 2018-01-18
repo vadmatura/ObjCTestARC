@@ -50,7 +50,8 @@ static int testObjectCount = 0;
 }
 
 -(NSString *)description {
-	return _name;
+	NSString *s = [[NSString alloc] initWithFormat:@"TestObject(%@)", _name];
+	return s;
 }
 
 @end
