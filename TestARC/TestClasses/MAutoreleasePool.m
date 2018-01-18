@@ -8,27 +8,54 @@
 
 #import "MAutoreleasePool.h"
 
+static MAutoreleasePool *mAutoreleasePool = nil;
+
 @implementation MAutoreleasePool {
 	NSMutableArray *objects;
 }
 
-- (instancetype)init {
-	self = [super init];
-	if (self) {
++ (instancetype)getPool {
+	@synchronized(self) {
+		if(mAutoreleasePool == nil)
+			mAutoreleasePool = [[super allocWithZone:NULL] init];
+	}
+	return mAutoreleasePool;
+}
++ (id)allocWithZone:(NSZone *)zone {
+	return [[self getPool] retain];
+}
+- (id)copyWithZone:(NSZone *)zone {
+	return self;
+}
+- (id)retain {
+	return self;
+}
+- (unsigned long)retainCount {
+	return UINT_MAX; //denotes an object that cannot be released
+}
+- (oneway void)release {
+	// never release
+}
+- (id)autorelease {
+	return self;
+}
+- (id)init {
+	if (self = [super init]) {
 		objects = [NSMutableArray new];
 	}
 	return self;
 }
-
--(void)dealloc {
+- (void)dealloc {
+	// Should never be called, but just here for clarity really.
 	[objects release];
 	[super dealloc];
 }
 
-- (void)add:(id)aObject {
+- (instancetype)add:(id)aObject {
 	if (![objects containsObject:aObject]) {
 		[objects addObject:aObject];
 	}
+	return aObject;
 }
 
 - (void)drain {
@@ -42,4 +69,5 @@
 - (void)printStatus {
 	NSLog(@"P: %@", [[objects valueForKey:@"description"] componentsJoinedByString:@" "]);
 }
+
 @end

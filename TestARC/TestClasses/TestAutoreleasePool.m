@@ -9,26 +9,24 @@
 #import "TestAutoreleasePool.h"
 #import "MAutoreleasePool.h"
 #import "TestObject.h"
+#import "NSObject+MAutorelease.h"
 
 @implementation TestAutoreleasePool
 
 - (instancetype)init {
 	self = [super init];
 	if (self) {
-		MAutoreleasePool *pool = [MAutoreleasePool new];
-		
 		for (int i = 0; i < 10; i++) {
-			TestObject *to1 = [[TestObject alloc] initWithName:[[NSString alloc] initWithFormat:@"TestPool1_%d", i]];
-			TestObject *to2 = [[TestObject alloc] initWithName:[[NSString alloc] initWithFormat:@"TestPool2_%d", i]];
-			[pool add:to1];
-			[pool add:to2];
+			NSString *n1 = [[[NSString alloc] initWithFormat:@"TestPool1_%d", i] addToAutorelease];
+			NSString *n2 = [[[NSString alloc] initWithFormat:@"TestPool2_%d", i] addToAutorelease];
+			TestObject *to1 = [[[TestObject alloc] initWithName:n1] addToAutorelease];
+			TestObject *to2 = [[[TestObject alloc] initWithName:n2] addToAutorelease];
 			
 			[to1 emptyMethod];
 			[to2 emptyMethod];
 			
-			[pool drain];
+			[MAutoreleasePool.getPool drain];
 		}
-		[pool release];
 	}
 	return self;
 }

@@ -15,9 +15,10 @@
 		7EA7FE031FFFBFCF001D48B6 /* TestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA7FE001FFFBFCE001D48B6 /* TestObject.m */; };
 		7EA7FE041FFFBFCF001D48B6 /* TestARCProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA7FE021FFFBFCE001D48B6 /* TestARCProperties.m */; };
 		7EA7FE071FFFCB15001D48B6 /* TestMRCProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA7FE061FFFCB15001D48B6 /* TestMRCProperties.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		7EA7FE0A2004FB25001D48B6 /* TestMethodSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA7FE092004FB25001D48B6 /* TestMethodSwizzling.m */; };
+		7EA7FE0A2004FB25001D48B6 /* TestObject+MethodSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA7FE092004FB25001D48B6 /* TestObject+MethodSwizzling.m */; };
 		7EA7FE0D20050BA0001D48B6 /* TestAutoreleasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA7FE0C20050BA0001D48B6 /* TestAutoreleasePool.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7EA7FE1020050DD1001D48B6 /* MAutoreleasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA7FE0F20050DD1001D48B6 /* MAutoreleasePool.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7EE94E572010E6C900D82D50 /* NSObject+MAutorelease.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE94E562010E6C900D82D50 /* NSObject+MAutorelease.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,11 +38,13 @@
 		7EA7FE021FFFBFCE001D48B6 /* TestARCProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestARCProperties.m; sourceTree = "<group>"; };
 		7EA7FE051FFFCB15001D48B6 /* TestMRCProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestMRCProperties.h; sourceTree = "<group>"; };
 		7EA7FE061FFFCB15001D48B6 /* TestMRCProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestMRCProperties.m; sourceTree = "<group>"; };
-		7EA7FE092004FB25001D48B6 /* TestMethodSwizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestMethodSwizzling.m; sourceTree = "<group>"; };
+		7EA7FE092004FB25001D48B6 /* TestObject+MethodSwizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "TestObject+MethodSwizzling.m"; sourceTree = "<group>"; };
 		7EA7FE0B20050BA0001D48B6 /* TestAutoreleasePool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestAutoreleasePool.h; sourceTree = "<group>"; };
 		7EA7FE0C20050BA0001D48B6 /* TestAutoreleasePool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestAutoreleasePool.m; sourceTree = "<group>"; };
 		7EA7FE0E20050DD1001D48B6 /* MAutoreleasePool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAutoreleasePool.h; sourceTree = "<group>"; };
 		7EA7FE0F20050DD1001D48B6 /* MAutoreleasePool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAutoreleasePool.m; sourceTree = "<group>"; };
+		7EE94E552010E6C900D82D50 /* NSObject+MAutorelease.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+MAutorelease.h"; sourceTree = "<group>"; };
+		7EE94E562010E6C900D82D50 /* NSObject+MAutorelease.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MAutorelease.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +96,7 @@
 			children = (
 				7EA7FE051FFFCB15001D48B6 /* TestMRCProperties.h */,
 				7EA7FE061FFFCB15001D48B6 /* TestMRCProperties.m */,
-				7EA7FE092004FB25001D48B6 /* TestMethodSwizzling.m */,
+				7EA7FE092004FB25001D48B6 /* TestObject+MethodSwizzling.m */,
 				7EA7FE0B20050BA0001D48B6 /* TestAutoreleasePool.h */,
 				7EA7FE0C20050BA0001D48B6 /* TestAutoreleasePool.m */,
 				7EA7FE0E20050DD1001D48B6 /* MAutoreleasePool.h */,
@@ -102,6 +105,8 @@
 				7EA7FE021FFFBFCE001D48B6 /* TestARCProperties.m */,
 				7EA7FDFF1FFFBFCE001D48B6 /* TestObject.h */,
 				7EA7FE001FFFBFCE001D48B6 /* TestObject.m */,
+				7EE94E552010E6C900D82D50 /* NSObject+MAutorelease.h */,
+				7EE94E562010E6C900D82D50 /* NSObject+MAutorelease.m */,
 			);
 			path = TestClasses;
 			sourceTree = "<group>";
@@ -182,7 +187,8 @@
 				7EA7FE031FFFBFCF001D48B6 /* TestObject.m in Sources */,
 				7EA7FE071FFFCB15001D48B6 /* TestMRCProperties.m in Sources */,
 				7EA7FE0D20050BA0001D48B6 /* TestAutoreleasePool.m in Sources */,
-				7EA7FE0A2004FB25001D48B6 /* TestMethodSwizzling.m in Sources */,
+				7EE94E572010E6C900D82D50 /* NSObject+MAutorelease.m in Sources */,
+				7EA7FE0A2004FB25001D48B6 /* TestObject+MethodSwizzling.m in Sources */,
 				7EA7FE041FFFBFCF001D48B6 /* TestARCProperties.m in Sources */,
 				7EA7FDED1FFFBF96001D48B6 /* AppDelegate.m in Sources */,
 			);

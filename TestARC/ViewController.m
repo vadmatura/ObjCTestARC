@@ -22,7 +22,9 @@ TestMRCProperties *tpM;
 	tpM = [TestMRCProperties new];
 	TestObject *to = [[TestObject alloc] initWithName:@"to"];
 	[to testMethod];
+	to = nil;
 	TestAutoreleasePool *tap = [TestAutoreleasePool new];
+	tap = nil;
 	tpM = nil;
 	tpA = nil;
 	// Do any additional setup after loading the view.

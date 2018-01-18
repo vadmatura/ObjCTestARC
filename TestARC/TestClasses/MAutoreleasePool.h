@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface MAutoreleasePool : NSObject
-- (instancetype)init;
-- (void)add:(id)aObject;
++ (instancetype)getPool;
+- (instancetype)add:(id)aObject;
 - (void)drain;
 - (void)printStatus;
 @end
