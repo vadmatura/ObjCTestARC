@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface TestAutoreleasePool : NSObject
-- (instancetype)init;
+- (void)test;
+- (void)testWithMemoryLeak;
 @end

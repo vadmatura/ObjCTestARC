@@ -38,11 +38,11 @@ static int testObjectCount = 0;
 
 - (void)dealloc {
 	testObjectCount--;
-	NSLog(@"- %@ %d", self.name, testObjectCount);
+	NSLog(@"- %@ OBJ_Count: %d", self.name, testObjectCount);
 }
 
 - (void)testMethod {
-	NSLog(@"testMethod: %@ %d", self.name, testObjectCount);
+	NSLog(@"testMethod: %@ OBJ_Count: %d", self.name, testObjectCount);
 }
 
 - (void)emptyMethod {

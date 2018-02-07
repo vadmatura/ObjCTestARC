@@ -18,18 +18,28 @@ TestMRCProperties *tpM;
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	// Do any additional setup after loading the view.
+}
+
+- (IBAction)startTest:(id)sender {
 	tpA = [TestARCProperties new];
 	tpM = [TestMRCProperties new];
 	TestObject *to = [[TestObject alloc] initWithName:@"to"];
 	[to testMethod];
 	to = nil;
-	TestAutoreleasePool *tap = [TestAutoreleasePool new];
-	tap = nil;
 	tpM = nil;
 	tpA = nil;
-	// Do any additional setup after loading the view.
 }
-
+- (IBAction)autorelease:(id)sender {
+	TestAutoreleasePool *tap = [TestAutoreleasePool new];
+	[tap test];
+	tap = nil;
+}
+- (IBAction)autoreleaseMemoryLeak:(id)sender {
+	TestAutoreleasePool *tap = [TestAutoreleasePool new];
+	[tap testWithMemoryLeak];
+	tap = nil;
+}
 
 - (void)setRepresentedObject:(id)representedObject {
 	[super setRepresentedObject:representedObject];

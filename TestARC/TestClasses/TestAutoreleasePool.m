@@ -13,22 +13,36 @@
 
 @implementation TestAutoreleasePool
 
-- (instancetype)init {
-	self = [super init];
-	if (self) {
-		for (int i = 0; i < 10; i++) {
-			NSString *n1 = [[[NSString alloc] initWithFormat:@"TestPool1_%d", i] addToAutorelease];
-			NSString *n2 = [[[NSString alloc] initWithFormat:@"TestPool2_%d", i] addToAutorelease];
-			TestObject *to1 = [[[TestObject alloc] initWithName:n1] addToAutorelease];
-			TestObject *to2 = [[[TestObject alloc] initWithName:n2] addToAutorelease];
-			
-			[to1 emptyMethod];
-			[to2 emptyMethod];
-			
-			[MAutoreleasePool.getPool drain];
-		}
+- (void) test {
+	for (int i = 0; i < 10; i++) {
+		//NSString *n1 = [[[NSString alloc] initWithFormat:@"TestPool1_%d", i] addToAutorelease];
+		//NSString *n2 = [[[NSString alloc] initWithFormat:@"TestPool2_%d", i] addToAutorelease];
+
+		NSString *n1 = [[NSString alloc] initWithString:@"TestPool1_%d"];
+		NSString *n2 = [[NSString alloc] initWithString:@"TestPool2_%d"];
+
+		TestObject *to1 = [[[TestObject alloc] initWithName:n1] addToAutorelease];
+		TestObject *to2 = [[[TestObject alloc] initWithName:n2] addToAutorelease];
+
+		[to1 emptyMethod];
+		[to2 emptyMethod];
+
+		[MAutoreleasePool.getPool drain];
 	}
-	return self;
+}
+
+- (void) testWithMemoryLeak {
+	for (int i = 0; i < 10; i++) {
+		NSString *n1 = [[NSString alloc] initWithFormat:@"TestPool1_%d", i];	//Memory leak
+		NSString *n2 = [[NSString alloc] initWithFormat:@"TestPool2_%d", i];	//Memory leak
+		TestObject *to1 = [[[TestObject alloc] initWithName:n1] addToAutorelease];
+		TestObject *to2 = [[[TestObject alloc] initWithName:n2] addToAutorelease];
+
+		[to1 emptyMethod];
+		[to2 emptyMethod];
+
+		[MAutoreleasePool.getPool drain];
+	}
 }
 
 @end
