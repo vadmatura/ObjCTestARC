@@ -722,26 +722,26 @@
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jHT-dI-2vH">
-                                <rect key="frame" x="185" y="189" width="112" height="32"/>
+                                <rect key="frame" x="142" y="189" width="199" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Autorelease" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="biD-Pm-NCF">
+                                <buttonCell key="cell" type="push" title="Autorelease InitWithString" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="biD-Pm-NCF">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="autorelease:" target="XfG-lQ-9wD" id="x5g-2K-a9c"/>
+                                    <action selector="autoreleaseInitWithString:" target="XfG-lQ-9wD" id="dRV-Ek-Mdv"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Rn-Pu-9LG">
-                                <rect key="frame" x="130" y="156" width="222" height="32"/>
+                                <rect key="frame" x="139" y="156" width="205" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Autorelease with memory leak" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8Ke-FP-Q3O">
+                                <buttonCell key="cell" type="push" title="Autorelease InitWithFormat" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8Ke-FP-Q3O">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
-                                    <connections>
-                                        <action selector="autoreleaseMemoryLeak:" target="XfG-lQ-9wD" id="k0I-47-IDi"/>
-                                    </connections>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="autoreleaseInitWithFormat:" target="XfG-lQ-9wD" id="KDt-BR-uAv"/>
+                                </connections>
                             </button>
                         </subviews>
                     </view>

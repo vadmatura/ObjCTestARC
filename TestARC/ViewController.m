@@ -30,14 +30,14 @@ TestMRCProperties *tpM;
 	tpM = nil;
 	tpA = nil;
 }
-- (IBAction)autorelease:(id)sender {
+- (IBAction)autoreleaseInitWithString:(id)sender {
 	TestAutoreleasePool *tap = [TestAutoreleasePool new];
-	[tap test];
+	[tap testInitWithString];
 	tap = nil;
 }
-- (IBAction)autoreleaseMemoryLeak:(id)sender {
+- (IBAction)autoreleaseInitWithFormat:(id)sender {
 	TestAutoreleasePool *tap = [TestAutoreleasePool new];
-	[tap testWithMemoryLeak];
+	[tap testInitWithFormat];
 	tap = nil;
 }
 
