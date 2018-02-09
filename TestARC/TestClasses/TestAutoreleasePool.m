@@ -14,7 +14,7 @@
 @implementation TestAutoreleasePool
 
 - (void)testInitWithString {
-	for (int i = 0; i < 10; i++) {
+	for (int i = 0; i < 4; i++) {
 		NSString *n1 = [[[NSString alloc] initWithString:@"TestPool1_%d"] addToAutorelease];
 		NSString *n2 = [[[NSString alloc] initWithString:@"TestPool2_%d"] addToAutorelease];
 
@@ -23,13 +23,11 @@
 
 		[to1 emptyMethod];
 		[to2 emptyMethod];
-
-		[MAutoreleasePool.getPool drain];
 	}
 }
 
 - (void)testInitWithFormat {
-	for (int i = 0; i < 10; i++) {
+	for (int i = 0; i < 4; i++) {
 		NSString *n1 = [[[NSString alloc] initWithFormat:@"TestPool1_%d", i] addToAutorelease];
 		NSString *n2 = [[[NSString alloc] initWithFormat:@"TestPool2_%d", i] addToAutorelease];
 		TestObject *to1 = [[[TestObject alloc] initWithName:n1] addToAutorelease];
@@ -37,8 +35,6 @@
 
 		[to1 emptyMethod];
 		[to2 emptyMethod];
-
-		[MAutoreleasePool.getPool drain];
 	}
 }
 

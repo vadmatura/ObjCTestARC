@@ -11,6 +11,4 @@
 @interface MAutoreleasePool : NSObject
 + (instancetype)getPool;
 - (instancetype)add:(id)aObject;
-- (void)drain;
-- (void)printStatus;
 @end

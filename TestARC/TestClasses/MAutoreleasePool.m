@@ -8,16 +8,23 @@
 
 #import "MAutoreleasePool.h"
 
+enum AddedObjectsStatus {
+	NO_OBJECTS, EXISTS_OBJECTS, NEED_FOR_DELETE
+};
+
+const float drainInterval = 1.0;
 static MAutoreleasePool *mAutoreleasePool = nil;
 
 @implementation MAutoreleasePool {
 	NSMutableArray *objects;
+	enum AddedObjectsStatus addedObjectsStatus;
 }
 
 + (instancetype)getPool {
 	@synchronized(self) {
-		if(mAutoreleasePool == nil)
+		if(mAutoreleasePool == nil) {
 			mAutoreleasePool = [[super allocWithZone:NULL] init];
+		}
 	}
 	return mAutoreleasePool;
 }
@@ -42,6 +49,8 @@ static MAutoreleasePool *mAutoreleasePool = nil;
 - (id)init {
 	if (self = [super init]) {
 		objects = [NSMutableArray new];
+		addedObjectsStatus = NO_OBJECTS;
+		[NSTimer scheduledTimerWithTimeInterval:drainInterval target:self selector:@selector(onTimer) userInfo:nil repeats:YES];
 	}
 	return self;
 }
@@ -52,22 +61,43 @@ static MAutoreleasePool *mAutoreleasePool = nil;
 }
 
 - (instancetype)add:(id)aObject {
-	if (![objects containsObject:aObject]) {
-		[objects addObject:aObject];
+	@synchronized(self) {
+		if (![objects containsObject:aObject]) {
+			[objects addObject:aObject];
+		}
+		addedObjectsStatus = EXISTS_OBJECTS;
 	}
 	return aObject;
 }
 
 - (void)drain {
-	[self printStatus];
-	for (id object in objects) {
-		[object release];
+	@synchronized(self) {
+		[self printStatus];
+		for (id object in objects) {
+			[object release];
+		}
+		[objects removeAllObjects];
+		addedObjectsStatus = NO_OBJECTS;
 	}
-	[objects removeAllObjects];
 }
 
 - (void)printStatus {
 	NSLog(@"P: %@", [[objects valueForKey:@"description"] componentsJoinedByString:@" "]);
+}
+
+-(void)onTimer {
+	@synchronized(self) {
+		switch (addedObjectsStatus) {
+			case EXISTS_OBJECTS:
+				addedObjectsStatus = NEED_FOR_DELETE;
+				break;
+			case NEED_FOR_DELETE:
+				[self drain];
+				break;
+			default:
+				break;
+		}
+	}
 }
 
 @end
